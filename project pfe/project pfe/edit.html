@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Club EJME - Université Ben M'Sik</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-users me-2"></i>Plateforme des Clubs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Annuaire des Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calendrier des événements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Actualités</a>
+                    </li>
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> Responsable EJME
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mon profil</a></li>
+                            <li><a class="dropdown-item" href="#">Tableau de bord</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-container p-4 p-md-5 mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h1 class="h3 fw-bold">Responsable du club EJME <small class="text-muted"><< modifier page</small></h1>
+                        <button class="btn btn-outline-secondary">
+                            <i class="fas fa-eye me-1"></i> Prévisualiser
+                        </button>
+                    </div>
+                    
+                    <form>
+                        <!-- Catégorie -->
+                        <div class="mb-4">
+                            <label for="category" class="form-label required-field">Catégorie</label>
+                            <div class="d-flex align-items-center">
+                                <select class="form-select me-3" id="category" required>
+                                    <option value="">Sélectionner une catégorie</option>
+                                    <option value="E" selected>Entrepreneuriat</option>
+                                    <option value="M">Musique</option>
+                                    <option value="J">Jeunesse</option>
+                                    <option value="T">Technologie</option>
+                                </select>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="featured" checked>
+                                    <label class="form-check-label" for="featured">Mettre en avant</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="mb-4">
+                            <label for="description" class="form-label required-field">Description</label>
+                            <textarea class="form-control" id="description" rows="3" required>Club d'entrepreneuriat des jeunes marocains</textarea>
+                        </div>
+                        
+                        <!-- Mission -->
+                        <div class="mb-4">
+                            <label for="mission" class="form-label required-field">Mission</label>
+                            <textarea class="form-control" id="mission" rows="3" required>Promouvoir l'esprit d'entreprise chez les jeunes étudiants</textarea>
+                        </div>
+                        
+                        <!-- Contact -->
+                        <div class="mb-4">
+                            <label class="form-label required-field">Contact</label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                        <input type="tel" class="form-control" placeholder="Téléphone" value="+212612345678" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" placeholder="Email" value="contact@ejme-club.ma" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Réseaux sociaux -->
+                        <div class="mb-4">
+                            <label class="form-label">Réseaux sociaux</label>
+                            <div class="d-flex flex-wrap">
+                                <div class="me-4 mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text social-icon"><i class="fab fa-facebook-f"></i></span>
+                                        <input type="url" class="form-control" placeholder="Lien Facebook" value="https://facebook.com/ejmeclub">
+                                    </div>
+                                </div>
+                                <div class="me-4 mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text social-icon"><i class="fab fa-twitter"></i></span>
+                                        <input type="url" class="form-control" placeholder="Lien Twitter" value="https://twitter.com/ejmeclub">
+                                    </div>
+                                </div>
+                                <div class="me-4 mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text social-icon"><i class="fab fa-instagram"></i></span>
+                                        <input type="url" class="form-control" placeholder="Lien Instagram" value="https://instagram.com/ejmeclub">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text social-icon"><i class="fab fa-linkedin-in"></i></span>
+                                        <input type="url" class="form-control" placeholder="Lien LinkedIn">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Boutons d'action -->
+                        <div class="d-flex justify-content-between mt-5">
+                            <button type="button" class="btn btn-outline-danger">
+                                <i class="fas fa-trash-alt me-1"></i> Supprimer la page
+                            </button>
+                            <div>
+                                <button type="button" class="btn btn-outline-secondary me-2">
+                                    Annuler
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-1"></i> Enregistrer les modifications
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Section université -->
+                <div class="text-center mb-4">
+                    <h2 class="h4 fw-bold">FACULTE DES SCIENCES BEN M'SICK</h2>
+                    <p>UNIVERSITÉ HASSAN II DE CASABLANCA</p>
+                </div>
+                
+                <!-- Contact -->
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="h5 fw-bold mb-3">CONTACTEZ NOUS</h3>
+                        <address>
+                            Faculté des Sciences Ben M'Sikk Av Driss El Harti Sidi Othmane<br>
+                            Casablanca B.P. 7955.<br>
+                            (+212) 5 22 70 46 71<br>
+                            (+212) 6 61 44 24 27<br>
+                            (+212) 5 22 70 46 75
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestion de la soumission du formulaire
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validation des champs requis
+                const requiredFields = document.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('is-invalid');
+                    }
+                });
+                
+                if (isValid) {
+                    // Simulation d'enregistrement
+                    alert('Les modifications ont été enregistrées avec succès !');
+                    
+                    // Réinitialiser les styles d'erreur
+                    requiredFields.forEach(field => {
+                        field.classList.remove('is-invalid');
+                    });
+                } else {
+                    // Afficher un message d'erreur
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'alert alert-danger mt-3';
+                    errorDiv.textContent = 'Veuillez remplir tous les champs obligatoires.';
+                    form.appendChild(errorDiv);
+                    
+                    // Supprimer le message après 3 secondes
+                    setTimeout(() => {
+                        errorDiv.remove();
+                    }, 3000);
+                }
+            });
+            
+            // Gestion des icônes de réseaux sociaux
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('input');
+                    if (input) {
+                        input.focus();
+                    }
+                });
+            });
+            
+            // Confirmation avant suppression
+            const deleteBtn = document.querySelector('.btn-outline-danger');
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', function() {
+                    if (confirm('Êtes-vous sûr de vouloir supprimer cette page ? Cette action est irréversible.')) {
+                        alert('Page supprimée (simulation)');
+                        // Redirection vers le tableau de bord
+                        window.location.href = 'dashboard.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
