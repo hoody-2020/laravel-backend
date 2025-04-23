@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier des Événements - Université Ben M'Sik</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .event-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .event-date {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .event-day {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .event-month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-users me-2"></i>Plateforme des Clubs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Annuaire des Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Calendrier des événements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Actualités</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="#">Connexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="text-center mb-5">Calendrier des événements</h1>
+                
+                <!-- Événement 1 -->
+                <div class="card event-card mb-4 position-relative">
+                    <div class="category-badge">12</div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="event-date me-4">
+                                <span class="event-day">1</span>
+                                <span class="event-month">Déc</span>
+                            </div>
+                            <div>
+                                <h3 class="h5 fw-bold">Les sciences en français : comment éduquer et informer sans confusion ?</h3>
+                                <p class="text-muted mb-2"><i class="far fa-clock me-2"></i> 15:00 - 16:00 (GMT-01:00)</p>
+                                <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> En ligne</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Événement 2 -->
+                <div class="card event-card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <h4 class="h6 text-muted mb-0">Des 10</h4>
+                                <h3 class="h5 fw-bold mt-1">Formation certifiante "Jeunesse, Paix et Sécurité" : Candidater dès maintenant !</h3>
+                                <p class="text-muted mb-2"><i class="far fa-clock me-2"></i> Mardi 0:00 - 0:00 (GMT-01:00)</p>
+                                <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> En ligne</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Événement 3 -->
+                <div class="card event-card mb-4 position-relative">
+                    <div class="category-badge">26</div>
+                    <div class="card-body">
+                        <h4 class="h6 text-muted mb-1">Résorce La communauté</h4>
+                        <h3 class="h5 fw-bold">WEBINAIRE Lancement UNI FOR CHANGE (2e session)</h3>
+                        <p class="text-muted mb-2"><i class="far fa-clock me-2"></i> Mardi 18:00 - 19:00 (GMT-01:00)</p>
+                        <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> En ligne</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-2">Détails</a>
+                    </div>
+                </div>
+                
+                <!-- Événement 4 -->
+                <div class="card event-card mb-4">
+                    <div class="card-body">
+                        <h4 class="h6 text-muted mb-1">Semaine de la citoyenneté</h4>
+                        <h3 class="h5 fw-bold">25-30</h3>
+                        <p class="text-muted mb-2"><i class="far fa-clock me-2"></i> Lundi 8:00 (GMT-01:00)</p>
+                        <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> École Supérieure de Gestion et d'Administration des Entreprises : Brazzaville-Congo</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-2">Détails</a>
+                    </div>
+                </div>
+                
+                <!-- Événement 5 -->
+                <div class="card event-card mb-4 position-relative">
+                    <div class="category-badge">18</div>
+                    <div class="card-body">
+                        <h3 class="h5 fw-bold">Remèze-vous le 18 novembre pour accéder à des formations qualifiantes...</h3>
+                        <p class="text-muted mb-2"><i class="far fa-clock me-2"></i> Lundi 0:00 - 0:00 (GMT-01:00)</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-2">Détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5">CONTACTEZ NOUS</h3>
+                    <address class="mb-0">
+                        Faculté des Sciences Ben Mšikk<br>
+                        Av Driss El Harti Stál Ottomane<br>
+                        Casablanca B P 7995<br>
+                        (+212) 5 22 70 46 71<br>
+                        (+212) 6 61 44 24 27<br>
+                        (+212) 5 22 70 46 75
+                    </address>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <h3 class="h5">Régende</h3>
+                    <p class="mb-0">Régende</p>
+                </div>
+            </div>
+            <hr class="my-3 bg-light">
+            <div class="text-center">
+                <p class="mb-0">© 2023 Plateforme des clubs de l'université Ben Mšik. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des cartes événement
+            const eventCards = document.querySelectorAll('.event-card');
+            
+            eventCards.forEach((card, index) => {
+                // Délai d'animation progressif
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+                
+                // Configuration initiale pour l'animation
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+            });
+            
+            // Gestion des clics sur les boutons Détails
+            const detailButtons = document.querySelectorAll('.btn-outline-primary');
+            detailButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const eventTitle = this.closest('.event-card').querySelector('h3').textContent;
+                    alert(`Détails de l'événement : ${eventTitle}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
