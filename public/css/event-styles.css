@@ -1,0 +1,91 @@
+/* Contenu de : public/css/styles.css */
+
+.event-block {
+    background-color: #f9f9f9; /* Fond légèrement gris */
+    border: 1px solid #eee;    /* Bordure très claire */
+    border-radius: 5px;        /* Coins adoucis */
+    padding: 20px;             /* Espace à l'intérieur du bloc */
+    margin-bottom: 25px;       /* Espace entre les blocs */
+    line-height: 1.6;          /* Espacement vertical du texte */
+}
+.event-block h3 {
+    margin-top: 0;             /* Pas de marge en haut du titre */
+    margin-bottom: 15px;       /* Espace sous le titre */
+    color: #333;               /* Couleur du titre */
+    border-bottom: 1px solid #ddd; /* Ligne sous le titre */
+    padding-bottom: 10px;      /* Espace entre titre et ligne */
+}
+.event-block p {
+    margin-bottom: 8px;       /* Petit espace sous chaque paragraphe */
+    color: #555;               /* Couleur du texte */
+}
+/* Style pour les étiquettes (ex: "ID :", "Club :") */
+.event-block strong {
+    color: #333;              /* Étiquettes un peu plus foncées */
+    min-width: 150px;         /* Largeur minimum pour essayer d'aligner */
+    display: inline-block;    /* Nécessaire pour appliquer min-width */
+}
+ /* Style pour la section des actions en bas du bloc */
+ .event-actions {
+    margin-top: 15px;         /* Espace avant les actions */
+    padding-top: 15px;        /* Espace au-dessus des actions (après la ligne) */
+    border-top: 1px solid #eee; /* Ligne de séparation avant les actions */
+}
+/* Style général pour les liens et boutons d'action */
+.event-actions a, .event-actions button {
+    margin-right: 15px;       /* Espace entre les actions */
+    text-decoration: none;
+    color: #007bff;           /* Couleur bleue par défaut */
+    vertical-align: middle;   /* Alignement vertical */
+}
+/* Style spécifique pour le bouton "Supprimer" */
+.event-actions button.delete-button {
+     background: none !important; /* Pas de fond */
+     border: none;                /* Pas de bordure */
+     padding: 0 !important;       /* Pas de padding */
+     color: #dc3545;             /* Couleur rouge */
+     text-decoration: underline;  /* Souligné comme un lien */
+     cursor: pointer;             /* Curseur main */
+     font-family: inherit;        /* Garde la police de la page */
+     font-size: inherit;          /* Garde la taille de police */
+}
+ /* Nécessaire pour que le formulaire de suppression ne casse pas la ligne */
+ .event-actions form {
+     display: inline;
+     margin: 0;
+     padding: 0;
+}
+
+/* Styles pour l'affichage des messages flash (succès/erreur) */
+.alert-success {
+    padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;
+}
+.alert-error {
+     padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;
+}
+
+/* Style pour le header (titre + bouton) */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Style pour le bouton "Ajouter" */
+.btn-add {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Style pour le message quand la liste est vide */
+.empty-list-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
